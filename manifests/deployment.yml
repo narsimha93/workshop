@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: narsimhaworkshop 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: narsimhaworkshop
+  template:
+    metadata:
+      labels:
+        app: narsimhaworkshop 
+    spec:
+      containers:
+        - name: narsimhaworkshop 
+          image: myacraz1.azurecr.io/narsimhaworkshop
+          ports:
+          - containerPort: 5000
